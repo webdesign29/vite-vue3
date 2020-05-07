@@ -1,27 +1,33 @@
 <template>
-  <article class="p-5">
-    <h1 class="text-3xl font-bold text-green-800">Hello Vite + Vue 3!</h1>
-    <p>Edit ./App.vue to test hot module replacement (HMR).</p>
-    <p class="mt-2">
-      <span class="block">Count is: {{ count }}</span>
-      <VButton @click="count++">increment</VButton>
-    </p>
-  </article>
+  <div v-if="error">{{ error }}</div>
+
+  <suspense v-else>
+    <pokemon-list />
+
+    <template #fallback>
+      Loading...
+    </template>
+  </suspense>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import VButton from './components/VButton.vue'
+import { defineComponent, onErrorCaptured, ref, Ref } from 'vue'
+import PokemonList from './components/PokemonList.vue'
 
 export default defineComponent({
   components: {
-    VButton,
+    PokemonList,
   },
 
   setup() {
-    const count = ref(0)
+    const error: Ref<unknown> = ref(null)
 
-    return { count }
+    onErrorCaptured(err => {
+      error.value = err
+      return true
+    })
+
+    return { error }
   },
 })
 </script>
