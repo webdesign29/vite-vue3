@@ -1,19 +1,17 @@
 <template>
   <button
-    class="py-2 px-4 rounded bg-green-500 hover:bg-green-400 text-white transition duration-200 ease-out"
     v-bind="$attrs"
+    class="px-4 py-2 text-white transition duration-200 ease-out bg-green-500 rounded hover:bg-green-400"
   >
     <slot />
   </button>
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-class-component'
+import { defineComponent } from 'vue'
 
-class VButton extends Vue {}
-
-export default Options({
+export default defineComponent({
   name: 'VButton',
   inheritAttrs: false,
-})(VButton)
+})
 </script>
