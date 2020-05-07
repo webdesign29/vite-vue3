@@ -1,13 +1,8 @@
-# Vite Typescript Starter
+# vite-dex
 
-Starter template for Vite + TypeScript project
+Pokedex app, made with:
 
-## Getting Started
-
-1. Clone this repo
-2. `yarn install`
-3. `yarn dev` or `yarn build`
-
-## License
-
-MIT
+- [vite-typescript-starter](https://github.com/ktsn/vite-typescript-starter)
+- [Vue 3](https://github.com/vuejs/vue-next)
+- [vite](https://github.com/vuejs/vite)
+- [TypeScript](https://www.typescriptlang.org/)
