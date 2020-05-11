@@ -1,6 +1,4 @@
-# vite-dex
-
-Pokedex app, made with:
+# VITE - VUE 3 - WD29 starter / Demo
 
 - [vite-typescript-starter](https://github.com/ktsn/vite-typescript-starter)
 - [Vue 3](https://github.com/vuejs/vue-next)
